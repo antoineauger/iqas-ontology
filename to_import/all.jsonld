@@ -219,12 +219,12 @@
           ],
           "qoo:allowsToSet": [
             {
-              "@id": "qoo:threshold_min",
+              "@id": "qoo:test_param_1",
               "@type": "qoo:QoOCustomizableParameter",
-              "qoo:documentation": "A string (float) that indicates the lowest admissible value.",
+              "qoo:documentation": "A string (float) for dummy parameter testing.",
               "qoo:has": [
                 {
-                  "@id": "qoo:SimpleFilteringPipeline_threshold_min_effect_1",
+                  "@id": "qoo:SimpleFilteringPipeline_test_param_1_effect_1",
                   "@type": "qoo:QoOEffect",
                   "qoo:capabilityVariation": "CONSTANT",
                   "qoo:qooAttributeVariation": "HIGH",
@@ -233,7 +233,7 @@
                   }
                 },
                 {
-                  "@id": "qoo:SimpleFilteringPipeline_threshold_min_effect_2",
+                  "@id": "qoo:SimpleFilteringPipeline_test_param_1_effect_2",
                   "@type": "qoo:QoOEffect",
                   "qoo:capabilityVariation": "CONSTANT",
                   "qoo:qooAttributeVariation": "CONSTANT",
@@ -242,66 +242,6 @@
                   }
                 }
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "qoo:allowsToSet": [
-        {
-          "@id": "qoo:obsRate_min",
-          "@type": "qoo:QoOCustomizableParameter",
-          "qoo:documentation": "A string that indicates the lowest admissible observation rate under the format int/unit. Accepted units: s, min, hour. E.g., '1/s', '3/hour'",
-          "qoo:has": [
-            {
-              "@id": "qoo:General_obsRate_min_effect_1",
-              "@type": "qoo:QoOEffect",
-              "qoo:capabilityVariation": "CONSTANT",
-              "qoo:qooAttributeVariation": "CONSTANT",
-              "qoo:impacts": {
-                "@id": "qoo:OBS_RATE"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "qoo:allowsToSet": [
-        {
-          "@id": "qoo:obsRate_max",
-          "@type": "qoo:QoOCustomizableParameter",
-          "qoo:documentation": "A string that indicates the maximum admissible observation rate under the format int/unit. Accepted units: s, min, hour. E.g., '1/s', '3/hour'. If both obsRate_min and obsRate_max are specified, only obsRate_max is considered.",
-          "qoo:has": [
-            {
-              "@id": "qoo:General_obsRate_max_effect_1",
-              "@type": "qoo:QoOEffect",
-              "qoo:capabilityVariation": "CONSTANT",
-              "qoo:qooAttributeVariation": "CONSTANT",
-              "qoo:impacts": {
-                "@id": "qoo:OBS_RATE"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "qoo:allowsToSet": [
-        {
-          "@id": "qoo:age_max",
-          "@type": "qoo:QoOCustomizableParameter",
-          "qoo:documentation": "A string (int) that indicates the maximum admissible age (expressed in seconds) of observations for this Request.",
-          "qoo:has": [
-            {
-              "@id": "qoo:General_ageMax_effect_1",
-              "@type": "qoo:QoOEffect",
-              "qoo:capabilityVariation": "CONSTANT",
-              "qoo:qooAttributeVariation": "CONSTANT",
-              "qoo:impacts": {
-                "@id": "qoo:OBS_FRESHNESS"
-              }
             }
           ]
         }
