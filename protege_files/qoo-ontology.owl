@@ -22,11 +22,15 @@
     <Prefix name="m3-lite" IRI="http://purl.org/iot/vocab/m3-lite#"/>
     <Prefix name="iot-lite" IRI="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#"/>
     <Prefix name="qu-rec20" IRI="http://purl.org/NET/ssnx/qu/qu-rec20#"/>
-    <Import>file:/Users/an.auger/Desktop/iQAS_ontology/ssn.owl</Import>
-    <Import>http://www.w3.org/2003/01/geo/wgs84_pos#Point</Import>
+    <Import>http://purl.oclc.org/NET/ssnx/ssn</Import>
+    <Import>http://www.w3.org/2003/01/geo/wgs84_pos</Import>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">qoo-ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:date"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">April 2017</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
@@ -34,7 +38,7 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0.0</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">4.0.1</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="geo:alt"/>
@@ -63,10 +67,6 @@
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:title"/>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The QoO Ontology (QoOnto)</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="dc:date"/>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">January 2017</Literal>
     </Annotation>
     <Declaration>
         <DataProperty IRI="qooAttributeVariation"/>
@@ -105,10 +105,10 @@
         <Class IRI="QoORequirement"/>
     </Declaration>
     <Declaration>
-        <Datatype IRI="variation"/>
+        <DataProperty IRI="obsStrValue"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="obsLevelValue"/>
+        <Datatype IRI="variation"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="geo:Point"/>
@@ -141,6 +141,12 @@
         <ObjectProperty IRI="considers"/>
     </Declaration>
     <Declaration>
+        <Class IRI="QoOValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasQoOValue"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="hasExactValue"/>
     </Declaration>
     <Declaration>
@@ -159,10 +165,10 @@
         <ObjectProperty abbreviatedIRI="ssn:hasValue"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="iot-lite:isSubSystemOf"/>
+        <NamedIndividual IRI="MAX"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="MAX"/>
+        <ObjectProperty abbreviatedIRI="iot-lite:isSubSystemOf"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="ssn:SensingDevice"/>
@@ -175,6 +181,9 @@
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="ssn:Precision"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="qooStrValue"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="iot-lite:relativeLocation"/>
@@ -193,6 +202,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ssn:featureOfInterest"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasQoO"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="ssn:ObservationValue"/>
@@ -252,10 +264,10 @@
         <DataProperty IRI="documentation"/>
     </Declaration>
     <Declaration>
-        <Class IRI="QoOAttribute"/>
+        <DataProperty IRI="levelValue"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI="iot-lite:observationValue"/>
+        <Class IRI="QoOAttribute"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="ssn:FeatureOfInterest"/>
@@ -291,10 +303,13 @@
         <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="capabilityVariation"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI="ssn:isProducedBy"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="capabilityVariation"/>
+        <ObjectProperty IRI="isAbout"/>
     </Declaration>
     <Declaration>
         <Datatype IRI="sensorState"/>
@@ -339,19 +354,16 @@
         <Class abbreviatedIRI="iot-lite:Circle"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="out_ObsLevel"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI="iot-lite:Coverage"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="ssn:MeasurementProperty"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="geo:lat"/>
+        <DataProperty abbreviatedIRI="iot-lite:interfaceDescription"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI="iot-lite:interfaceDescription"/>
+        <AnnotationProperty abbreviatedIRI="geo:lat"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:title"/>
@@ -363,19 +375,16 @@
         <ObjectProperty abbreviatedIRI="ssn:attachedSystem"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="iot-lite:Service"/>
+        <DataProperty IRI="sensor_id"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="sensor_id"/>
+        <Class abbreviatedIRI="iot-lite:Service"/>
     </Declaration>
     <Declaration>
         <Class IRI="ObservationRequest"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="ssn:SensorOutput"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="in_ObsLevel"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="iot-lite:exposedBy"/>
@@ -397,6 +406,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ssn:madeObservation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="QoOIntrisicQuality"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="geo:location"/>
@@ -551,6 +563,38 @@
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="QoOIntrisicQuality"/>
+        <Class IRI="QualityofObservation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="QoOIntrisicQuality"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasQoOValue"/>
+            <Class IRI="QoOValue"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="QoOIntrisicQuality"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasQoOValue"/>
+            <Class IRI="QoOValue"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="QoOIntrisicQuality"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="isAbout"/>
+            <Class IRI="QoOAttribute"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="QoOIntrisicQuality"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isAbout"/>
+            <Class IRI="QoOAttribute"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="QoOParameter"/>
         <Class IRI="QualityofObservation"/>
     </SubClassOf>
@@ -675,6 +719,38 @@
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="QoOValue"/>
+        <Class IRI="QualityofObservation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="QoOValue"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="iot-lite:hasQuantityKind"/>
+            <Class abbreviatedIRI="qu:QuantityKind"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="QoOValue"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="iot-lite:hasUnit"/>
+            <Class abbreviatedIRI="qu:Unit"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="QoOValue"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="iot-lite:hasQuantityKind"/>
+            <Class abbreviatedIRI="qu:QuantityKind"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="QoOValue"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="iot-lite:hasUnit"/>
+            <Class abbreviatedIRI="qu:Unit"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI="iot-lite:Circle"/>
         <Class abbreviatedIRI="iot-lite:Coverage"/>
     </SubClassOf>
@@ -768,27 +844,9 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ssn:MeasurementCapability"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn:MeasurementCapability"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="has"/>
             <Class IRI="QoOEffect"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn:MeasurementCapability"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI="ssn:forProperty"/>
-            <Class abbreviatedIRI="ssn:Property"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn:MeasurementCapability"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
-            <Class abbreviatedIRI="ssn:MeasurementProperty"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -797,24 +855,6 @@
             <ObjectProperty IRI="has"/>
             <Class IRI="QoOEffect"/>
         </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn:MeasurementCapability"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ssn:forProperty"/>
-            <Class abbreviatedIRI="ssn:Property"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn:MeasurementCapability"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
-            <Class abbreviatedIRI="ssn:MeasurementProperty"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn:MeasurementProperty"/>
-        <Class abbreviatedIRI="ssn:Property"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ssn:MeasurementRange"/>
@@ -891,6 +931,48 @@
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasQoO"/>
+            <Class IRI="QualityofObservation"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasQoO"/>
+            <Class IRI="QualityofObservation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="iot-lite:hasQuantityKind"/>
+            <Class abbreviatedIRI="qu:QuantityKind"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="iot-lite:hasUnit"/>
+            <Class abbreviatedIRI="qu:Unit"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="iot-lite:hasQuantityKind"/>
+            <Class abbreviatedIRI="qu:QuantityKind"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="iot-lite:hasUnit"/>
+            <Class abbreviatedIRI="qu:Unit"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI="ssn:Platform"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="considers"/>
@@ -949,20 +1031,6 @@
     <SubClassOf>
         <Class abbreviatedIRI="ssn:Precision"/>
         <Class abbreviatedIRI="ssn:MeasurementProperty"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn:Property"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
-            <Class abbreviatedIRI="ssn:FeatureOfInterest"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn:Property"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
-            <Class abbreviatedIRI="ssn:FeatureOfInterest"/>
-        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ssn:Resolution"/>
@@ -1063,6 +1131,13 @@
     <SubClassOf>
         <Class abbreviatedIRI="ssn:SensorOutput"/>
         <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasQoO"/>
+            <Class IRI="QualityofObservation"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ssn:SensorOutput"/>
+        <ObjectSomeValuesFrom>
             <ObjectProperty abbreviatedIRI="ssn:hasValue"/>
             <Class abbreviatedIRI="ssn:ObservationValue"/>
         </ObjectSomeValuesFrom>
@@ -1073,6 +1148,13 @@
             <ObjectProperty abbreviatedIRI="ssn:isProducedBy"/>
             <Class abbreviatedIRI="ssn:Sensor"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ssn:SensorOutput"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="hasQoO"/>
+            <Class IRI="QualityofObservation"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ssn:SensorOutput"/>
@@ -1283,12 +1365,20 @@
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasQoOValue"/>
+        <Class IRI="QoOIntrisicQuality"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="impacts"/>
         <Class IRI="QoOEffect"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="increases"/>
         <Class IRI="QoOPipeline"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isAbout"/>
+        <Class IRI="QoOIntrisicQuality"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="isImpactedBy"/>
@@ -1339,16 +1429,8 @@
         <Class abbreviatedIRI="ssn:SensingDevice"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="iot-lite:hasQuantityKind"/>
-        <Class abbreviatedIRI="ssn:ObservationValue"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="iot-lite:hasSensingDevice"/>
         <Class abbreviatedIRI="ssn:Sensor"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="iot-lite:hasUnit"/>
-        <Class abbreviatedIRI="ssn:ObservationValue"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="iot-lite:isSubSystemOf"/>
@@ -1466,11 +1548,19 @@
         <Class IRI="QoOEffect"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="hasQoOValue"/>
+        <Class IRI="QoOValue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="impacts"/>
         <Class IRI="QoOAttribute"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="increases"/>
+        <Class IRI="QoOAttribute"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isAbout"/>
         <Class IRI="QoOAttribute"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1522,16 +1612,8 @@
         <Class abbreviatedIRI="iot-lite:Coverage"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="iot-lite:hasQuantityKind"/>
-        <Class abbreviatedIRI="qu:QuantityKind"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="iot-lite:hasSensingDevice"/>
         <Class abbreviatedIRI="ssn:SensingDevice"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="iot-lite:hasUnit"/>
-        <Class abbreviatedIRI="qu:Unit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="iot-lite:isSubSystemOf"/>
@@ -1627,8 +1709,8 @@
         <Class abbreviatedIRI="ssn:MeasurementProperty"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="in_ObsLevel"/>
-        <Class IRI="QoOPipeline"/>
+        <DataProperty IRI="levelValue"/>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="max_treshold"/>
@@ -1639,16 +1721,16 @@
         <Class IRI="QoOParameter"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="obsLevelValue"/>
+        <DataProperty IRI="obsStrValue"/>
         <Class abbreviatedIRI="ssn:ObservationValue"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="out_ObsLevel"/>
-        <Class IRI="QoOPipeline"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="qooAttributeVariation"/>
         <Class IRI="QoOEffect"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="qooStrValue"/>
+        <Class IRI="QoOValue"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="sensorStateValue"/>
@@ -1683,10 +1765,6 @@
         <Class abbreviatedIRI="iot-lite:Service"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="iot-lite:observationValue"/>
-        <Class abbreviatedIRI="ssn:ObservationValue"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty abbreviatedIRI="iot-lite:radius"/>
         <Class abbreviatedIRI="iot-lite:Circle"/>
     </DataPropertyDomain>
@@ -1711,7 +1789,7 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="in_ObsLevel"/>
+        <DataProperty IRI="levelValue"/>
         <Datatype IRI="observationLevel"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -1723,16 +1801,16 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="obsLevelValue"/>
-        <Datatype IRI="observationLevel"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="out_ObsLevel"/>
-        <Datatype IRI="observationLevel"/>
+        <DataProperty IRI="obsStrValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="qooAttributeVariation"/>
         <Datatype IRI="variation"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="qooStrValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="sensorStateValue"/>
@@ -1764,10 +1842,6 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="iot-lite:interfaceType"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="iot-lite:observationValue"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -1909,4 +1983,3 @@
 
 
 <!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

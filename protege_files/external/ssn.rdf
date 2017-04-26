@@ -1,30 +1,27 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.oclc.org/NET/ssnx/ssn#"
      xml:base="http://purl.oclc.org/NET/ssnx/ssn"
-     xmlns:cc="http://creativecommons.org/ns#"
-     xmlns:dct="http://purl.org/dc/terms/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ns="http://creativecommons.org/ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#">
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.oclc.org/NET/ssnx/ssn">
         <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W3C Semantic Sensor Network Incubator Group</dc:creator>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Please report any errors to the Semantic Sensor Network Incubator Activity via the public W3C list public-xg-ssn@w3.org</rdfs:comment>
         <rdfs:seeAlso>http://www.w3.org/2005/Incubator/ssn/</rdfs:seeAlso>
         <dc:title>Semantic Sensor Network Ontology</dc:title>
-        <dct:modified>2011-06-20</dct:modified>
-        <cc:license rdf:resource="http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html"/>
+        <terms:modified>2011-06-20</terms:modified>
+        <ns:license rdf:resource="http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html"/>
         <dc:identifier>http://purl.oclc.org/NET/ssnx/ssn</dc:identifier>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology is developed by the W3C Semantic Sensor Networks Incubator Group (SSN-XG). The concepts and structure of the ontology were discussed in the group&apos;s meetings and on the mailing list. For more information on the group&apos;s activities see: http://www.w3.org/2005/Incubator/ssn/</rdfs:comment>
         <dc:rights>Copyright 2009 - 2011 W3C.</dc:rights>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology describes sensors and observations, and related concepts.  It does not describe domain concepts, time, locations, etc. these are intended to be included from other ontologies via OWL imports.</rdfs:comment>
-        <dct:created>2009-12-02</dct:created>
+        <terms:created>2009-12-02</terms:created>
     </owl:Ontology>
     
 
@@ -183,7 +180,7 @@
     <!-- http://purl.oclc.org/NET/ssnx/ssn#detects -->
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#detects">
-        <rdfs:comment>A relation from a sensor to the Stimulus that the sensor can detect.   
+        <rdfs:comment>A relation from a sensor to the Stimulus that the sensor can detect.
 The Stimulus itself will be serving as a proxy for (see isProxyOf) some observable property.</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.oclc.org/NET/ssnx/ssn</rdfs:isDefinedBy>
         <rdfs:label>detects</rdfs:label>
@@ -207,7 +204,7 @@ The Stimulus itself will be serving as a proxy for (see isProxyOf) some observab
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#featureOfInterest">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
-        <dc:source>skos:exactMatch &apos;featureOfInterest&apos; [O&amp;M - ISO/DIS 19156] 
+        <dc:source>skos:exactMatch &apos;featureOfInterest&apos; [O&amp;M - ISO/DIS 19156]
 		                    http://portal.opengeospatial.org/files/?artifact_id=41579</dc:source>
         <rdfs:comment>A relation between an observation and the entity whose quality was observed.   For example, in an observation of the weight of a person, the feature of interest is the person and the quality is weight.</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.oclc.org/NET/ssnx/ssn</rdfs:isDefinedBy>
@@ -467,7 +464,7 @@ The Stimulus itself will be serving as a proxy for (see isProxyOf) some observab
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#observationResult">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
-        <dc:source>skos:closeMatch &apos;result&apos; [O&amp;M - ISO/DIS 19156] 
+        <dc:source>skos:closeMatch &apos;result&apos; [O&amp;M - ISO/DIS 19156]
 		                    http://portal.opengeospatial.org/files/?artifact_id=41579</dc:source>
         <rdfs:comment>Relation linking an Observation (i.e., a description of the context, the Situation, in which the observatioin was made) and a Result, which contains a value representing the value associated with the observed Property.</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.oclc.org/NET/ssnx/ssn</rdfs:isDefinedBy>
@@ -519,7 +516,7 @@ The Stimulus itself will be serving as a proxy for (see isProxyOf) some observab
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#observedProperty">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
-        <dc:source>skos:exactMatch &apos;observedProperty&apos; [O&amp;M - ISO/DIS 19156] 
+        <dc:source>skos:exactMatch &apos;observedProperty&apos; [O&amp;M - ISO/DIS 19156]
 		                    http://portal.opengeospatial.org/files/?artifact_id=41579</dc:source>
         <rdfs:comment>Relation linking an Observation to the Property that was observed.  The observedProperty should be a Property (hasProperty) of the FeatureOfInterest (linked by featureOfInterest) of this observation.</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.oclc.org/NET/ssnx/ssn</rdfs:isDefinedBy>
@@ -577,7 +574,7 @@ Note that, given the DUL modelling of Qualities, a sensor defined with &apos;obs
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#qualityOfObservation">
         <rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasProperty"/>
-        <dc:source>skos:exactMatch &apos;resultQuality&apos; [O&amp;M - ISO/DIS 19156] 
+        <dc:source>skos:exactMatch &apos;resultQuality&apos; [O&amp;M - ISO/DIS 19156]
 		                    http://portal.opengeospatial.org/files/?artifact_id=41579</dc:source>
         <rdfs:comment>Relation linking an Observation to the adjudged quality of the result.  This is of course complimentary to the MeasurementCapability information recorded for the Sensor that made the Observation.</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.oclc.org/NET/ssnx/ssn</rdfs:isDefinedBy>
@@ -722,7 +719,7 @@ Note that, given the DUL modelling of Qualities, a sensor defined with &apos;obs
 
     <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Accuracy">
         <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
-        <dc:source>skos:exactMatch &apos;measurement accuracy/accuracy&apos; [VIM 2.13] 
+        <dc:source>skos:exactMatch &apos;measurement accuracy/accuracy&apos; [VIM 2.13]
 		                    http://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2008.pdf</dc:source>
         <rdfs:comment>The closeness of agreement between the value of an observation and the true value of the observed quality.</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.oclc.org/NET/ssnx/ssn</rdfs:isDefinedBy>
@@ -805,7 +802,7 @@ Note that, given the DUL modelling of Qualities, a sensor defined with &apos;obs
 
     <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#DetectionLimit">
         <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
-        <dc:source>skos:exactMatch &apos;detection limit&apos; [VIM 4.18] 
+        <dc:source>skos:exactMatch &apos;detection limit&apos; [VIM 4.18]
                                  http://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2008.pdf</dc:source>
         <rdfs:comment>An observed value for which the probability of falsely claiming the absence of a component in a material is Î², given a probability Î± of falsely claiming its presence.</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.oclc.org/NET/ssnx/ssn</rdfs:isDefinedBy>
@@ -867,7 +864,7 @@ Note that, given the DUL modelling of Qualities, a sensor defined with &apos;obs
                 <owl:allValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:source>skos:exactMatch &apos;feature&apos; [O&amp;M] 
+        <dc:source>skos:exactMatch &apos;feature&apos; [O&amp;M]
 		                    http://www.opengeospatial.org/standards/om</dc:source>
         <rdfs:comment>A feature is an abstraction of real world phenomena (thing, person, event, etc).</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.oclc.org/NET/ssnx/ssn</rdfs:isDefinedBy>
@@ -1077,8 +1074,8 @@ The conditions specified here are those that affect the measurement properties, 
                 <owl:onClass rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:source>skos:closeMatch &apos;observation&apos; [O&amp;M] 
-		                    http://www.opengeospatial.org/standards/om 
+        <dc:source>skos:closeMatch &apos;observation&apos; [O&amp;M]
+		                    http://www.opengeospatial.org/standards/om
 
 Observation in this ontology and O&amp;M are described differently (O&amp;M records an observation as an act/event), but they record the same thing and are essentially interchangeable.  The difference is in the ontological structure of the two, not the data or use.
 
@@ -1110,10 +1107,10 @@ Measurement result in VIM is the measured value plus any other relevant informat
                                   http://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2008.pdf
 
 skos:exactMatch &apos;observed value&apos; [SensorML OGC-0700]
-http://www.opengeospatial.org/standards/sensorml 
+http://www.opengeospatial.org/standards/sensorml
 
 skos:closeMatch &apos;observation result&apos; [O&amp;M]
-http://www.opengeospatial.org/standards/om 
+http://www.opengeospatial.org/standards/om
 
 O&amp;M conflates what we have as SensorOutput and ObservationValue into observation result, though the OGC standard does say &quot;result contains a value&quot; and &quot;a result which has a value&quot;, which fits naturally with the model here.</dc:source>
         <rdfs:comment>The value of the result of an Observation.  An Observation has a result which is the output of some sensor, the result is an information object that encodes some value for a Feature.</rdfs:comment>
@@ -1269,7 +1266,7 @@ The difference is that here we also allow for qualities that aren&apos;t VIM inf
                 <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <dc:source>skos:exactMatch &apos;property&apos; [O&amp;M] 
+        <dc:source>skos:exactMatch &apos;property&apos; [O&amp;M]
 		                    http://www.opengeospatial.org/standards/om</dc:source>
         <rdfs:comment>An observable Quality of an Event or Object.  That is, not a quality of an abstract entity as is also allowed by DUL&apos;s Quality, but rather an aspect of an entity that is intrinsic to and cannot exist without the entity and is observable by a sensor.</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.oclc.org/NET/ssnx/ssn</rdfs:isDefinedBy>
@@ -1391,10 +1388,10 @@ The difference is that here we also allow for qualities that aren&apos;t VIM inf
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:source>skos:exactMatch &apos;sensor&apos; [SensorML OGC-0700]
-		                    http://www.opengeospatial.org/standards/sensorml 
+		                    http://www.opengeospatial.org/standards/sensorml
 
-                                skos:closeMatch &apos;observation procedure&apos; [O&amp;M] 
-                                http://www.opengeospatial.org/standards/om 
+                                skos:closeMatch &apos;observation procedure&apos; [O&amp;M]
+                                http://www.opengeospatial.org/standards/om
 
 O&amp;M allows sensors, methods, instruments, systems, algorithms and process chains as the processUsed of an observation; this ontology allows a similar range of things (any thing that can do sensing), just they are all grouped under the term sensor (which is thus wider than the O&amp;M concept).</dc:source>
         <rdfs:comment>A sensor can do (implements) sensing: that is, a sensor is any entity that can follow a sensing method and thus observe some Property of a FeatureOfInterest.  Sensors may be physical devices, computational methods, a laboratory setup with a person following a method, or any other thing that can follow a Sensing Method to observe a Property.</rdfs:comment>
@@ -1410,7 +1407,7 @@ O&amp;M allows sensors, methods, instruments, systems, algorithms and process ch
     <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#SensorDataSheet">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
         <dc:source>http://www.w3.org/2005/Incubator/ssn/</dc:source>
-        <rdfs:comment>A data sheet records properties of a sensor.  A data sheet might describe for example the accuracy in various conditions, the power use, the types of connectors that the sensor has, etc.  
+        <rdfs:comment>A data sheet records properties of a sensor.  A data sheet might describe for example the accuracy in various conditions, the power use, the types of connectors that the sensor has, etc.
 
 Generally a sensor&apos;s properties are recorded directly (with hasMeasurementCapability, for example), but the data sheet can be used for example to record the manufacturers specifications verses observed capabilites, or if more is known than the manufacturer specifies, etc.  The data sheet is an information object about the sensor&apos;s properties, rather than a direct link to the actual properties themselves.</rdfs:comment>
         <rdfs:isDefinedBy>http://purl.oclc.org/NET/ssnx/ssn</rdfs:isDefinedBy>
@@ -1458,8 +1455,8 @@ Generally a sensor&apos;s properties are recorded directly (with hasMeasurementC
         </rdfs:subClassOf>
         <dc:source>http://www.w3.org/2005/Incubator/ssn/
 
-                                  skos:closeMatch &apos;observation result&apos; [O&amp;M] 
-                                  http://www.opengeospatial.org/standards/om 
+                                  skos:closeMatch &apos;observation result&apos; [O&amp;M]
+                                  http://www.opengeospatial.org/standards/om
 
 See comments at ObservationValue.</dc:source>
         <rdfs:comment>A sensor outputs a piece of information (an observed value), the value itself being represented by an ObservationValue.</rdfs:comment>
