@@ -81,7 +81,7 @@
         "@id": "qoo:obs_sensor01",
         "ssn:observationResult": {
           "@id": "qoo:out_sensor01",
-          "ssn:hasValue": {
+          "iot-lite:hasValue": {
             "@id": "qoo:ex_obs_out_sensor01",
             "@type": "ssn:ObservationValue",
             "iot-lite:hasUnit": {
@@ -125,7 +125,7 @@
         "@id": "qoo:obs_sensor02",
         "ssn:observationResult": {
           "@id": "qoo:out_sensor02",
-          "ssn:hasValue": {
+          "iot-lite:hasValue": {
             "@id": "qoo:ex_obs_out_sensor02",
             "@type": "ssn:ObservationValue",
             "iot-lite:hasUnit": {
@@ -169,7 +169,7 @@
         "@id": "qoo:obs_sensor03",
         "ssn:observationResult": {
           "@id": "qoo:out_sensor03",
-          "ssn:hasValue": {
+          "iot-lite:hasValue": {
             "@id": "qoo:ex_obs_out_sensor03",
             "@type": "ssn:ObservationValue",
             "iot-lite:hasUnit": {
