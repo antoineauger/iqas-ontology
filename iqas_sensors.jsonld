@@ -4,7 +4,9 @@
     "iot-lite": "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#",
     "ssn": "http://purl.oclc.org/NET/ssnx/ssn#",
     "qoo": "http://isae.fr/iqas/qoo-ontology#",
-    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "qu": "http://purl.org/NET/ssnx/qu/qu#",
+    "m3-lite": "http://purl.org/iot/vocab/m3-lite#"
   },
   "@graph": [
     {
@@ -15,7 +17,11 @@
       "@id": "qoo:visibility",
       "@type": "ssn:Property"
     },
-    { 
+    {
+      "@id": "qoo:publicLocations",
+      "@type": "ssn:FeatureOfInterest"
+    },
+    {
       "@id": "qoo:loc_toulouse",
       "@type": "geo:Point",
       "geo:lat": "43.601176",
@@ -24,7 +30,7 @@
       "iot-lite:relativeLocation": "Toulouse",
       "iot-lite:altRelative": "0"
     },
-    { 
+    {
       "@id": "qoo:loc_portet",
       "@type": "geo:Point",
       "geo:lat": "43.53101809",
@@ -32,11 +38,9 @@
       "geo:alt": "152",
       "iot-lite:relativeLocation": "Chullanka - Portet-sur-Garonne",
       "iot-lite:altRelative": "0",
-      "qoo:isInTheAreaOf": {
-        "@id": "qoo:loc_toulouse"
-      }
+      "qoo:isInTheAreaOf": {"@id": "qoo:loc_toulouse"}
     },
-    { 
+    {
       "@id": "qoo:loc_jardin",
       "@type": "geo:Point",
       "geo:lat": "43.59543567",
@@ -44,9 +48,7 @@
       "geo:alt": "145",
       "iot-lite:relativeLocation": "Jardin des plantes - Toulouse",
       "iot-lite:altRelative": "0",
-      "qoo:isInTheAreaOf": {
-        "@id": "qoo:loc_toulouse"
-      }
+      "qoo:isInTheAreaOf": {"@id": "qoo:loc_toulouse"}
     },
     {
       "@id": "qoo:serv_sensor01_temp",
@@ -73,23 +75,33 @@
       "@id": "qoo:sensor01",
       "@type": "ssn:Sensor",
       "iot-lite:id": "sensor01",
-      "geo:location": {
-        "@id": "qoo:loc_portet"
-      },
+      "geo:location": {"@id": "qoo:loc_portet"},
       "qoo:sensorStateValue": "CONNECTED",
       "ssn:madeObservation": {
         "@id": "qoo:obs_sensor01",
+        "ssn:observationResult": {
+          "@id": "qoo:out_sensor01",
+          "ssn:hasValue": {
+            "@id": "qoo:ex_obs_out_sensor01",
+            "@type": "ssn:ObservationValue",
+            "iot-lite:hasUnit": {
+                "@id": "qoo:unit_sensor01",
+                "@type": "m3-lite:DegreeCelsius"
+            },
+            "iot-lite:hasQuantityKind": {
+                "@id": "qoo:quantityKind_sensor01",
+                "@type": "m3-lite:Temperature"
+            }
+          }
+        },
         "ssn:observedProperty": {
           "@id": "qoo:temperature",
           "@type": "ssn:Property",
-          "qoo:canBeRetrievedThrough": {
-            "@id": "qoo:serv_sensor01_temp"
-          }
-        } 
+          "qoo:canBeRetrievedThrough": {"@id": "qoo:serv_sensor01_temp"},
+          "ssn:isPropertyOf": {"@id": "qoo:publicLocations"}
+        }
       },
-      "iot-lite:exposedBy": {
-          "@id": "qoo:serv_sensor01_temp"
-      },
+      "iot-lite:exposedBy": {"@id": "qoo:serv_sensor01_temp"},
       "ssn:hasMeasurementCapability": {
         "@id": "qoo:capa_temp_sensor01",
         "ssn:hasMeasurementProperty": [
@@ -100,32 +112,40 @@
             "qoo:hasMaxValue": "+50.0"
           }
         ],
-        "ssn:forProperty": {
-          "@id": "qoo:temperature"
-        }
+        "ssn:forProperty": {"@id": "qoo:temperature"}
       }
     },
     {
       "@id": "qoo:sensor02",
       "@type": "ssn:Sensor",
       "iot-lite:id": "sensor02",
-      "geo:location": {
-        "@id": "qoo:loc_portet"
-      },
+      "geo:location": {"@id": "qoo:loc_portet"},
       "qoo:sensorStateValue": "CONNECTED",
       "ssn:madeObservation": {
         "@id": "qoo:obs_sensor02",
+        "ssn:observationResult": {
+          "@id": "qoo:out_sensor02",
+          "ssn:hasValue": {
+            "@id": "qoo:ex_obs_out_sensor02",
+            "@type": "ssn:ObservationValue",
+            "iot-lite:hasUnit": {
+                "@id": "qoo:unit_sensor02",
+                "@type": "m3-lite:Metre"
+            },
+            "iot-lite:hasQuantityKind": {
+                "@id": "qoo:quantityKind_sensor02",
+                "@type": "m3-lite:Visibility"
+            }
+          }
+        },
         "ssn:observedProperty": {
           "@id": "qoo:visibility",
           "@type": "ssn:Property",
-          "qoo:canBeRetrievedThrough": {
-            "@id": "qoo:serv_sensor02_visib"
-          }
+          "qoo:canBeRetrievedThrough": {"@id": "qoo:serv_sensor02_visib"},
+          "ssn:isPropertyOf": {"@id": "qoo:publicLocations"}
         }
       },
-      "iot-lite:exposedBy": {
-        "@id": "qoo:serv_sensor02_visib"
-      },
+      "iot-lite:exposedBy": {"@id": "qoo:serv_sensor02_visib"},
       "ssn:hasMeasurementCapability": {
         "@id": "qoo:capa_visib_sensor02",
         "ssn:hasMeasurementProperty": [
@@ -136,32 +156,40 @@
             "qoo:hasMaxValue": "+INF"
           }
         ],
-        "ssn:forProperty": {
-          "@id": "qoo:visibility"
-        }
+        "ssn:forProperty": {"@id": "qoo:visibility"}
       }
     },
     {
       "@id": "qoo:sensor03",
       "@type": "ssn:Sensor",
       "iot-lite:id": "sensor03",
-      "geo:location": {
-        "@id": "qoo:loc_jardin"
-      },
+      "geo:location": {"@id": "qoo:loc_jardin"},
       "qoo:sensorStateValue": "CONNECTED",
       "ssn:madeObservation": {
         "@id": "qoo:obs_sensor03",
+        "ssn:observationResult": {
+          "@id": "qoo:out_sensor03",
+          "ssn:hasValue": {
+            "@id": "qoo:ex_obs_out_sensor03",
+            "@type": "ssn:ObservationValue",
+            "iot-lite:hasUnit": {
+                "@id": "qoo:unit_sensor03",
+                "@type": "m3-lite:Metre"
+            },
+            "iot-lite:hasQuantityKind": {
+                "@id": "qoo:quantityKind_sensor03",
+                "@type": "m3-lite:Visibility"
+            }
+          }
+        },
         "ssn:observedProperty": {
           "@id": "qoo:visibility",
           "@type": "ssn:Property",
-          "qoo:canBeRetrievedThrough": {
-            "@id": "qoo:serv_sensor03_visib"
-          }
+          "qoo:canBeRetrievedThrough": {"@id": "qoo:serv_sensor03_visib"},
+          "ssn:isPropertyOf": {"@id": "qoo:publicLocations"}
         }
       },
-      "iot-lite:exposedBy": {
-        "@id": "qoo:serv_sensor03_visib"
-      },
+      "iot-lite:exposedBy": {"@id": "qoo:serv_sensor03_visib"},
       "ssn:hasMeasurementCapability": {
         "@id": "qoo:capa_visib_sensor03",
         "ssn:hasMeasurementProperty": [
@@ -172,25 +200,13 @@
             "qoo:hasMaxValue": "+INF"
           }
         ],
-        "ssn:forProperty": {
-          "@id": "qoo:visibility"
-        }
+        "ssn:forProperty": {"@id": "qoo:visibility"}
       }
     },
     {
       "@id": "qoo:iQAS",
       "@type": "ssn:Platform",
-      "ssn:attachedSystem": [
-        {
-          "@id": "qoo:sensor01"
-        },
-        {
-          "@id": "qoo:sensor02"
-        },
-        {
-          "@id": "qoo:sensor03"
-        }
-      ],
+      "ssn:attachedSystem": [ {"@id": "qoo:sensor01"}, {"@id": "qoo:sensor02"}, {"@id": "qoo:sensor03"} ],
       "qoo:considers": [
         {
           "@id": "qoo:OBS_ACCURACY",
@@ -212,11 +228,7 @@
         {
           "@id": "qoo:SimpleFilteringPipeline",
           "@type": "qoo:QoOPipeline",
-          "qoo:in_ObsLevel": "RAW_DATA",
-          "qoo:out_ObsLevel": "RAW_DATA",
-          "qoo:supports": [
-
-          ],
+          "qoo:supports": [ ],
           "qoo:allowsToSet": [
             {
               "@id": "qoo:test_param_1",
@@ -228,18 +240,14 @@
                   "@type": "qoo:QoOEffect",
                   "qoo:capabilityVariation": "CONSTANT",
                   "qoo:qooAttributeVariation": "HIGH",
-                  "qoo:impacts": {
-                    "@id": "qoo:OBS_ACCURACY"
-                  }
+                  "qoo:impacts": {"@id": "qoo:OBS_ACCURACY"}
                 },
                 {
                   "@id": "qoo:SimpleFilteringPipeline_test_param_1_effect_2",
                   "@type": "qoo:QoOEffect",
                   "qoo:capabilityVariation": "CONSTANT",
                   "qoo:qooAttributeVariation": "CONSTANT",
-                  "qoo:impacts": {
-                    "@id": "qoo:OBS_FRESHNESS"
-                  }
+                  "qoo:impacts": {"@id": "qoo:OBS_FRESHNESS"}
                 }
               ]
             }
