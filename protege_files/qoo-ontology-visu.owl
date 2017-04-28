@@ -36,7 +36,7 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">4.0.1</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">4.0.2</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="geo:alt"/>
@@ -109,6 +109,9 @@
         <Datatype IRI="variation"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="obsLevelValue"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI="geo:Point"/>
     </Declaration>
     <Declaration>
@@ -149,6 +152,9 @@
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="ssn:Property"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="obsTimestampsValue"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI="iot-lite:interfaceType"/>
@@ -262,9 +268,6 @@
         <DataProperty IRI="documentation"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="levelValue"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="QoOAttribute"/>
     </Declaration>
     <Declaration>
@@ -296,6 +299,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="QoOPipeline"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="obsDateValue"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
@@ -1707,10 +1713,6 @@
         <Class abbreviatedIRI="ssn:MeasurementProperty"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="levelValue"/>
-        <Class abbreviatedIRI="ssn:ObservationValue"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="max_treshold"/>
         <Class IRI="QoOParameter"/>
     </DataPropertyDomain>
@@ -1719,7 +1721,19 @@
         <Class IRI="QoOParameter"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="obsDateValue"/>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="obsLevelValue"/>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="obsStrValue"/>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="obsTimestampsValue"/>
         <Class abbreviatedIRI="ssn:ObservationValue"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -1787,10 +1801,6 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="levelValue"/>
-        <Datatype IRI="observationLevel"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="max_treshold"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -1799,7 +1809,19 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="obsDateValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="obsLevelValue"/>
+        <Datatype IRI="observationLevel"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="obsStrValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="obsTimestampsValue"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
