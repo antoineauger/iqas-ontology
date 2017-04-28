@@ -1276,13 +1276,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://isae.fr/iqas/qoo-ontology#contains"/>
-                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://isae.fr/iqas/qoo-ontology#contains"/>
-                <owl:allValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+                <owl:allValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1596,7 +1596,6 @@
     <!-- http://purl.oclc.org/NET/ssnx/ssn#Sensor -->
 
     <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor">
-        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://isae.fr/iqas/qoo-ontology#belongsTo"/>

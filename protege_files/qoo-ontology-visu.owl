@@ -196,10 +196,10 @@
         <Datatype IRI="slaLevel"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="isSupportedBy"/>
+        <ObjectProperty abbreviatedIRI="ssn:onPlatform"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ssn:onPlatform"/>
+        <ObjectProperty IRI="isSupportedBy"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="ssn:Platform"/>
@@ -214,10 +214,10 @@
         <Class abbreviatedIRI="ssn:ObservationValue"/>
     </Declaration>
     <Declaration>
-        <Class IRI="QoOEffect"/>
+        <ObjectProperty abbreviatedIRI="ssn:observedBy"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ssn:observedBy"/>
+        <Class IRI="QoOEffect"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="sensorStateValue"/>
@@ -307,10 +307,10 @@
         <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="capabilityVariation"/>
+        <ObjectProperty abbreviatedIRI="ssn:isProducedBy"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ssn:isProducedBy"/>
+        <DataProperty IRI="capabilityVariation"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="isAbout"/>
@@ -379,10 +379,10 @@
         <ObjectProperty abbreviatedIRI="ssn:attachedSystem"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="sensor_id"/>
+        <Class abbreviatedIRI="iot-lite:Service"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="iot-lite:Service"/>
+        <DataProperty IRI="sensor_id"/>
     </Declaration>
     <Declaration>
         <Class IRI="ObservationRequest"/>
@@ -796,14 +796,14 @@
         <Class abbreviatedIRI="ssn:Device"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="contains"/>
-            <Class abbreviatedIRI="ssn:Device"/>
+            <Class abbreviatedIRI="ssn:Sensor"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ssn:Device"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="contains"/>
-            <Class abbreviatedIRI="ssn:Device"/>
+            <Class abbreviatedIRI="ssn:Sensor"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
