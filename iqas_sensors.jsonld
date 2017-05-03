@@ -226,28 +226,35 @@
       ],
       "qoo:provides": [
         {
-          "@id": "qoo:SimpleFilteringPipeline",
+          "@id": "qoo:CustomPipeline1",
           "@type": "qoo:QoOPipeline",
           "qoo:supports": [ ],
           "qoo:allowsToSet": [
             {
-              "@id": "qoo:test_param_1",
+              "@id": "qoo:nb_copies",
               "@type": "qoo:QoOCustomizableParameter",
-              "qoo:documentation": "A string (float) for dummy parameter testing.",
+              "qoo:documentation": "A string (integer) that indicates how many copies should be made and emitted each time that an observation arrives.",
               "qoo:has": [
                 {
-                  "@id": "qoo:SimpleFilteringPipeline_test_param_1_effect_1",
+                  "@id": "qoo:CustomPipeline1_nb_copies_effect_1",
                   "@type": "qoo:QoOEffect",
-                  "qoo:capabilityVariation": "CONSTANT",
+                  "qoo:capabilityVariation": "HIGH",
                   "qoo:qooAttributeVariation": "HIGH",
-                  "qoo:impacts": {"@id": "qoo:OBS_ACCURACY"}
+                  "qoo:impacts": {"@id": "qoo:OBS_RATE"}
                 },
                 {
-                  "@id": "qoo:SimpleFilteringPipeline_test_param_1_effect_2",
+                  "@id": "qoo:CustomPipeline1_nb_copies_effect_2",
                   "@type": "qoo:QoOEffect",
                   "qoo:capabilityVariation": "CONSTANT",
                   "qoo:qooAttributeVariation": "CONSTANT",
-                  "qoo:impacts": {"@id": "qoo:OBS_FRESHNESS"}
+                  "qoo:impacts": {"@id": "qoo:OBS_RATE"}
+                },
+                {
+                  "@id": "qoo:CustomPipeline1_nb_copies_effect_3",
+                  "@type": "qoo:QoOEffect",
+                  "qoo:capabilityVariation": "LOW",
+                  "qoo:qooAttributeVariation": "LOW",
+                  "qoo:impacts": {"@id": "qoo:OBS_RATE"}
                 }
               ]
             }
