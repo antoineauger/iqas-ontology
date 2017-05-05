@@ -229,33 +229,31 @@
           "@id": "qoo:CustomPipeline1",
           "@type": "qoo:QoOPipeline",
           "qoo:supports": [ ],
-          "qoo:allowsToSet": [
-            {
-              "@id": "qoo:nb_copies",
-              "@type": "qoo:QoOCustomizableParameter",
-              "qoo:documentation": "A string (integer) that indicates how many copies should be made and emitted each time that an observation arrives.",
-              "qoo:paramType": "Integer",
-              "qoo:paramMinValue": "0.0",
-              "qoo:paramMaxValue": "+INF",
-              "qoo:paramInitialValue": "0",
-              "qoo:has": [
-                {
-                  "@id": "qoo:CustomPipeline1_nb_copies_effect_1",
-                  "@type": "qoo:QoOEffect",
-                  "qoo:paramVariation": "HIGH",
-                  "qoo:qooAttributeVariation": "HIGH",
-                  "qoo:impacts": {"@id": "qoo:OBS_RATE"}
-                },
-                {
-                  "@id": "qoo:CustomPipeline1_nb_copies_effect_2",
-                  "@type": "qoo:QoOEffect",
-                  "qoo:paramVariation": "CONSTANT",
-                  "qoo:qooAttributeVariation": "CONSTANT",
-                  "qoo:impacts": {"@id": "qoo:OBS_RATE"}
-                }
-              ]
-            }
-          ]
+          "qoo:allowsToSet": {
+            "@id": "qoo:nb_copies",
+            "@type": "qoo:QoOCustomizableParameter",
+            "qoo:documentation": "A string (integer) that indicates how many copies should be made and emitted each time that an observation arrives.",
+            "qoo:paramType": "Integer",
+            "qoo:paramMinValue": "0",
+            "qoo:paramMaxValue": "+INF",
+            "qoo:paramInitialValue": "0",
+            "qoo:has": [
+              {
+                "@id": "qoo:CustomPipeline1_nb_copies_effect_1",
+                "@type": "qoo:QoOEffect",
+                "qoo:paramVariation": "HIGH",
+                "qoo:qooAttributeVariation": "HIGH",
+                "qoo:impacts": {"@id": "qoo:OBS_RATE"}
+              },
+              {
+                "@id": "qoo:CustomPipeline1_nb_copies_effect_2",
+                "@type": "qoo:QoOEffect",
+                "qoo:paramVariation": "CONSTANT",
+                "qoo:qooAttributeVariation": "CONSTANT",
+                "qoo:impacts": {"@id": "qoo:OBS_RATE"}
+              }
+            ]
+          }
         }
       ]
     }

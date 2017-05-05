@@ -36,31 +36,11 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">4.0.2</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="geo:alt"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="iot-lite:altRelative"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">4.0.3</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:creator"/>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Antoine Auger</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="iot-lite:relativeLocation"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="geo:lat"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="geo:long"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:title"/>
@@ -187,10 +167,16 @@
         <Class abbreviatedIRI="ssn:Precision"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="paramInitialValue"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="qooStrValue"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="iot-lite:relativeLocation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="paramMinValue"/>
     </Declaration>
     <Declaration>
         <Datatype IRI="slaLevel"/>
@@ -337,6 +323,9 @@
         <Class abbreviatedIRI="ssn:Resolution"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="paramType"/>
+    </Declaration>
+    <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
     </Declaration>
     <Declaration>
@@ -364,10 +353,10 @@
         <Class abbreviatedIRI="ssn:MeasurementProperty"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI="iot-lite:interfaceDescription"/>
+        <AnnotationProperty abbreviatedIRI="geo:lat"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="geo:lat"/>
+        <DataProperty abbreviatedIRI="iot-lite:interfaceDescription"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:title"/>
@@ -406,16 +395,19 @@
         <ObjectProperty abbreviatedIRI="iot-lite:hasCoverage"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="paramMaxValue"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="provides"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="geo:location"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ssn:madeObservation"/>
     </Declaration>
     <Declaration>
         <Class IRI="QoOIntrisicQuality"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="geo:location"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
@@ -609,13 +601,6 @@
     <SubClassOf>
         <Class IRI="QoOPipeline"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="allowsToSet"/>
-            <Class IRI="QoOCustomizableParameter"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="QoOPipeline"/>
-        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="decreases"/>
             <Class IRI="QoOAttribute"/>
         </ObjectSomeValuesFrom>
@@ -689,6 +674,13 @@
             <ObjectProperty IRI="supports"/>
             <Class IRI="Operator"/>
         </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="QoOPipeline"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="allowsToSet"/>
+            <Class IRI="QoOCustomizableParameter"/>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="QoORequirement"/>
@@ -1737,6 +1729,22 @@
         <Class abbreviatedIRI="ssn:ObservationValue"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="paramInitialValue"/>
+        <Class IRI="QoOCustomizableParameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="paramMaxValue"/>
+        <Class IRI="QoOCustomizableParameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="paramMinValue"/>
+        <Class IRI="QoOCustomizableParameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="paramType"/>
+        <Class IRI="QoOCustomizableParameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="qooAttributeVariation"/>
         <Class IRI="QoOEffect"/>
     </DataPropertyDomain>
@@ -1822,6 +1830,22 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="obsTimestampsValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="paramInitialValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="paramMaxValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="paramMinValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="paramType"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
