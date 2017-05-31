@@ -226,7 +226,7 @@
       ],
       "qoo:provides": [
         {
-          "@id": "qoo:CustomPipeline1",
+          "@id": "qoo:CustomPipeline",
           "@type": "qoo:QoOPipeline",
           "qoo:supports": [ ],
           "qoo:allowsToSet": {
@@ -236,17 +236,17 @@
             "qoo:paramType": "Integer",
             "qoo:paramMinValue": "0",
             "qoo:paramMaxValue": "+INF",
-            "qoo:paramInitialValue": "0",
+            "qoo:paramInitialValue": "1",
             "qoo:has": [
               {
-                "@id": "qoo:CustomPipeline1_nb_copies_effect_1",
+                "@id": "qoo:CustomPipeline_nb_copies_effect_1",
                 "@type": "qoo:QoOEffect",
                 "qoo:paramVariation": "HIGH",
                 "qoo:qooAttributeVariation": "HIGH",
                 "qoo:impacts": {"@id": "qoo:OBS_RATE"}
               },
               {
-                "@id": "qoo:CustomPipeline1_nb_copies_effect_2",
+                "@id": "qoo:CustomPipeline_nb_copies_effect_2",
                 "@type": "qoo:QoOEffect",
                 "qoo:paramVariation": "CONSTANT",
                 "qoo:qooAttributeVariation": "CONSTANT",
