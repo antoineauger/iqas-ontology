@@ -38,6 +38,39 @@ project
 │   iqas_sensors.jsonld
 ```
 
+## Installation
+
+If it is not already done, you should have downloaded and installed [Apache Jena Fuseki](https://jena.apache.org/documentation/serving_data/).
+
+## Configuration
+
+1. Clone the Github repository:
+    ```
+    git clone https://github.com/antoineauger/iqas-ontology.git
+    ```
+2. Edit the file `iqas-ontology/config_fuseki_tdb/qoo-onto.ttl` and choose a location for your ontology store:
+    ```
+    tdb:location "/your/path/to/your/store" ;
+    ```
+3. You may want to edit the file `iqas-ontology/iqas_sensors.jsonld` to declare your QoO attributes, sensors, topics, places, etc. Check out the provided minimal example.
+4. Run the Fuseki server by passing the previous file in parameter:
+    ```
+    $FUSEKI_DIR/fuseki-server --config=qoo-onto.ttl
+    ```
+6. Open a web browser and navigate to Fuseki homepage at [http://localhost:3030](http://localhost:3030)
+7. Visualize the `/qoo-onto` dataset and click on "add data".
+8. Leave "Destination graph name" blank and click on "select files..."
+9. Select the files `iqas-ontology/qoo-ontology.rdf` and `iqas-ontology/iqas_sensors.jsonld`. Then, click on "upload all".
+10. Click on the query tab and submit the following query:
+    ```sql
+    SELECT ?p ?v ?k
+    WHERE {
+        ?p ?v ?k 
+    }
+    LIMIT 10
+    ``` 
+    If you see some results, congratulations you have successfully deployed Apache Jena and it is currently able to serve requests on the QoOnto ontology!
+    
 ## Acknowledgments
 
 The iQAS platform have been developed during the PhD thesis of [Antoine Auger](https://personnel.isae-supaero.fr/antoine-auger/?lang=en) at ISAE-SUPAERO (2014-2017).
