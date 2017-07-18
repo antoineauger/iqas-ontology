@@ -1,5 +1,3 @@
-![iqas_logo](/src/main/resources/web/figures/iqas_logo_small.png?raw=true "iQAS logo")
-
 # iqas-ontology
 
 iQAS platform uses the QoOnto ontology. This repository may be used to setup and configure Apache Jena, the triple data store used for ontology inference.
