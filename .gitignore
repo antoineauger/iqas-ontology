@@ -1,3 +1,7 @@
 protege_files/4_ontologies.docx
 protege_files/4_ontologies.pdf
 protege_files/catalog-v001.xml
+documentation/*
+catalog-v001.xml
+protege_files/*
+normal.ttl
