@@ -1,24 +1,13 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://isae.fr/iqas/qoo-ontology#"
-     xml:base="http://isae.fr/iqas/qoo-ontology"
-     xmlns:iot-lite="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#"
-     xmlns:qu="http://purl.org/NET/ssnx/qu/qu#"
+<rdf:RDF xmlns="http://www.isae.fr/iqas/qoo-ontology#"
+     xml:base="http://www.isae.fr/iqas/qoo-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:m3-lite="http://purl.org/iot/vocab/m3-lite#"
-     xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
-     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
-     xmlns:qoo="http://isae.fr/iqas/qoo-ontology#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:qu-rec20="http://purl.org/NET/ssnx/qu/qu-rec20#"
-     xmlns:time="http://www.w3.org/2006/time#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://isae.fr/iqas/qoo-ontology#">
+    <owl:Ontology rdf:about="http://www.isae.fr/iqas/qoo-ontology">
         <rdfs:label xml:lang="en">qoo-ontology</rdfs:label>
         <dc:date xml:lang="en">April 2017</dc:date>
         <dc:description xml:lang="en">The qoo-ontology is a lightweight ontology based on IoT-Lite and SSN to describe and characterized sensors, observations and Quality of Observation (QoO).</dc:description>
@@ -26,83 +15,6 @@
         <dc:creator xml:lang="en">Antoine Auger</dc:creator>
         <dc:title xml:lang="en">The QoO Ontology (QoOnto)</dc:title>
     </owl:Ontology>
-
-
-
-    <!--
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-
-
-    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#altRelative -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#altRelative">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
-    </owl:AnnotationProperty>
-
-
-
-    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#relativeLocation -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#relativeLocation">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
-    </owl:AnnotationProperty>
-
-
-
-    <!-- http://purl.org/dc/elements/1.1/creator -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
-
-
-
-    <!-- http://purl.org/dc/elements/1.1/date -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
-
-
-
-    <!-- http://purl.org/dc/elements/1.1/description -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
-
-
-
-    <!-- http://purl.org/dc/elements/1.1/title -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
-
-
-
-    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#alt -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
-        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
-    </owl:AnnotationProperty>
-
-
-
-    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
-        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
-    </owl:AnnotationProperty>
-
-
-
-    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
-        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
-    </owl:AnnotationProperty>
 
 
 
@@ -251,6 +163,7 @@
     <!-- http://isae.fr/iqas/qoo-ontology#allowsToSet -->
 
     <owl:ObjectProperty rdf:about="http://isae.fr/iqas/qoo-ontology#allowsToSet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOPipeline"/>
         <rdfs:range rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOCustomizableParameter"/>
     </owl:ObjectProperty>
@@ -288,6 +201,8 @@
 
     <owl:ObjectProperty rdf:about="http://isae.fr/iqas/qoo-ontology#canBeRetrievedThrough">
         <owl:inverseOf rdf:resource="http://isae.fr/iqas/qoo-ontology#givesAccessTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
         <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
     </owl:ObjectProperty>
@@ -297,6 +212,7 @@
     <!-- http://isae.fr/iqas/qoo-ontology#concerns -->
 
     <owl:ObjectProperty rdf:about="http://isae.fr/iqas/qoo-ontology#concerns">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://isae.fr/iqas/qoo-ontology#QoORequirement"/>
         <rdfs:range rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOAttribute"/>
     </owl:ObjectProperty>
@@ -342,6 +258,8 @@
     <!-- http://isae.fr/iqas/qoo-ontology#givesAccessTo -->
 
     <owl:ObjectProperty rdf:about="http://isae.fr/iqas/qoo-ontology#givesAccessTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
         <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
     </owl:ObjectProperty>
@@ -366,7 +284,7 @@
 
     <!-- http://isae.fr/iqas/qoo-ontology#hasQoO -->
 
-    <owl:ObjectProperty rdf:about="http://isae.fr/iqas/qoo-ontology#hasQoO"/>
+    <rdf:Description rdf:about="http://isae.fr/iqas/qoo-ontology#hasQoO"/>
 
 
 
@@ -383,6 +301,7 @@
 
     <owl:ObjectProperty rdf:about="http://isae.fr/iqas/qoo-ontology#impacts">
         <owl:inverseOf rdf:resource="http://isae.fr/iqas/qoo-ontology#isImpactedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOEffect"/>
         <rdfs:range rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOAttribute"/>
     </owl:ObjectProperty>
@@ -401,6 +320,7 @@
     <!-- http://isae.fr/iqas/qoo-ontology#isAbout -->
 
     <owl:ObjectProperty rdf:about="http://isae.fr/iqas/qoo-ontology#isAbout">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOIntrisicQuality"/>
         <rdfs:range rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOAttribute"/>
     </owl:ObjectProperty>
@@ -410,6 +330,7 @@
     <!-- http://isae.fr/iqas/qoo-ontology#isImpactedBy -->
 
     <owl:ObjectProperty rdf:about="http://isae.fr/iqas/qoo-ontology#isImpactedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOAttribute"/>
         <rdfs:range rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOEffect"/>
     </owl:ObjectProperty>
@@ -419,6 +340,7 @@
     <!-- http://isae.fr/iqas/qoo-ontology#isInTheAreaOf -->
 
     <owl:ObjectProperty rdf:about="http://isae.fr/iqas/qoo-ontology#isInTheAreaOf">
+        <owl:inverseOf rdf:resource="http://isae.fr/iqas/qoo-ontology#isInTheAreaOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
         <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
@@ -503,6 +425,7 @@
     <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposedBy -->
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
         <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
         <rdfs:comment xml:lang="en"></rdfs:comment>
@@ -513,6 +436,7 @@
     <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasCoverage -->
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasCoverage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
         <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage"/>
         <rdfs:comment>Links the devices with their coverages.</rdfs:comment>
@@ -522,9 +446,9 @@
 
     <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasQuantityKind -->
 
-    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasQuantityKind">
+    <rdf:Description rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasQuantityKind">
         <rdfs:comment>Links a sensor or an attribute with the quantity  kind it measures (e.g. A sensor -sensor1- measures temperature: sensor1 hasQuantityKind temperature).</rdfs:comment>
-    </owl:ObjectProperty>
+    </rdf:Description>
 
 
 
@@ -540,9 +464,9 @@
 
     <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasUnit -->
 
-    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasUnit">
+    <rdf:Description rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasUnit">
         <rdfs:comment>Links the sensor with the units of the quantity kind it measures (e.g. A sensor -sensor1- measures temperature in Celsius: senso1 hasUnit celsius).</rdfs:comment>
-    </owl:ObjectProperty>
+    </rdf:Description>
 
 
 
@@ -569,6 +493,7 @@
     <!-- http://purl.oclc.org/NET/ssnx/ssn#featureOfInterest -->
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#featureOfInterest">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
         <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest"/>
     </owl:ObjectProperty>
@@ -587,6 +512,7 @@
     <!-- http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementCapability -->
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementCapability">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
         <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementCapability"/>
     </owl:ObjectProperty>
@@ -651,6 +577,7 @@
     <!-- http://purl.oclc.org/NET/ssnx/ssn#madeObservation -->
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#madeObservation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
         <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
     </owl:ObjectProperty>
@@ -669,6 +596,7 @@
     <!-- http://purl.oclc.org/NET/ssnx/ssn#observedBy -->
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#observedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
         <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
     </owl:ObjectProperty>
@@ -678,6 +606,7 @@
     <!-- http://purl.oclc.org/NET/ssnx/ssn#observedProperty -->
 
     <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#observedProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
         <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
     </owl:ObjectProperty>
@@ -696,6 +625,7 @@
     <!-- http://www.w3.org/2003/01/geo/wgs84_pos#location -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
     </owl:ObjectProperty>
@@ -1944,6 +1874,7 @@
 
     <owl:NamedIndividual rdf:about="http://isae.fr/iqas/qoo-ontology#OBS_ACCURACY">
         <rdf:type rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOAttribute"/>
+        <rdf:type rdf:resource="http://isae.fr/iqas/qoo-ontology#QualityofObservation"/>
     </owl:NamedIndividual>
 
 
@@ -1952,6 +1883,7 @@
 
     <owl:NamedIndividual rdf:about="http://isae.fr/iqas/qoo-ontology#OBS_FRESHNESS">
         <rdf:type rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOAttribute"/>
+        <rdf:type rdf:resource="http://isae.fr/iqas/qoo-ontology#QualityofObservation"/>
     </owl:NamedIndividual>
 
 
@@ -1960,6 +1892,7 @@
 
     <owl:NamedIndividual rdf:about="http://isae.fr/iqas/qoo-ontology#OBS_RATE">
         <rdf:type rdf:resource="http://isae.fr/iqas/qoo-ontology#QoOAttribute"/>
+        <rdf:type rdf:resource="http://isae.fr/iqas/qoo-ontology#QualityofObservation"/>
     </owl:NamedIndividual>
 
 

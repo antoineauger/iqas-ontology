@@ -61,18 +61,18 @@ If it is not already done, you should have downloaded and installed [Apache Jena
 5. Open a web browser and navigate to Fuseki homepage at [http://localhost:3030](http://localhost:3030)
 6. Visualize the `/qoo-onto` dataset and click on "add data".
 7. Leave "Destination graph name" blank and click on "select files..."
-8. Select the files `qoo-ontology.rdf` and `iqas_sensors.jsonld` located at the root of the Github repository. Then, click on "upload all".
+8. Select the files `qoo-ontology-full.rdf` and `iqas_sensors.jsonld` located at the root of the Github repository. Then, click on "upload all".
 9. Click on the query tab and submit the following query:
     ```sql
     SELECT ?p ?v ?k
     WHERE {
-        ?p ?v ?k 
+        ?p ?v ?k
     }
     LIMIT 10
-    ``` 
+    ```
     If you see some results, congratulations you have successfully deployed Apache Jena and it is currently able to serve requests on the QoOnto ontology!
 10. Please note that all ontology files located in `iqas-ontology/imports` need to be imported by the iQAS platform (see [step 6.1](https://github.com/antoineauger/iqas-platform#configuration))
-    
+
 ## Acknowledgments
 
 The iQAS platform have been developed during the PhD thesis of [Antoine Auger](https://personnel.isae-supaero.fr/antoine-auger/?lang=en) at ISAE-SUPAERO (2014-2017).
