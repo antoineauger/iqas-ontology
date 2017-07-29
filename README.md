@@ -39,6 +39,10 @@ project
 │   iqas_sensors.jsonld
 ```
 
+## Main classes and relationships for the QoOnto ontology
+
+![qoonto](https://github.com/antoineauger/iqas-ontology/blob/master/resources/qoonto_overview.pdf?raw=true "QoOnto")
+
 ## Installation
 
 If it is not already done, you should have downloaded and installed [Apache Jena Fuseki](https://jena.apache.org/documentation/serving_data/).
