@@ -41,7 +41,7 @@ project
 
 ## Main classes and relationships for the QoOnto ontology
 
-![qoonto](https://github.com/antoineauger/iqas-ontology/blob/master/resources/qoonto_overview.pdf?raw=true "QoOnto")
+![qoonto](https://github.com/antoineauger/iqas-ontology/blob/master/resources/qoonto_overview.png?raw=true "QoOnto")
 
 ## Installation
 
